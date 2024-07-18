@@ -5,4 +5,14 @@ const grpcObject = grpc.loadPackageDefinition(packageDefination);
 const todoPackage = grpcObject.todoPackage;
 
 
-const client = new todoPackage.Todo("localhost:3000");
+const text = process.argv[2];
+
+
+const client = new todoPackage.Todo("localhost:3000",grpc.credentials.createInsecure());
+
+client.createTodo({
+    "id":-1,
+    "text":text
+},(err,response)=>{
+    console.log("Response from Server: ",JSON.stringify(response),err)    
+})
