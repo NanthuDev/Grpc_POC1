@@ -16,3 +16,14 @@ client.createTodo({
 },(err,response)=>{
     console.log("Response from Server: ",JSON.stringify(response),err)    
 })
+
+
+client.readTodos({},(err,response)=>{
+    console.log("Read from Server: ",JSON.stringify(response),err)    
+
+})
+
+
+
+
+

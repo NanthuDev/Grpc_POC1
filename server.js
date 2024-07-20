@@ -33,4 +33,8 @@ function createTodo(call, callback) {
   todos.push(item);
   callback(null, item);
 }
-function readTodos(call, callback) {}
+
+function readTodos(call,callback){
+  callback(null,{"items":todos})
+}
+ 
